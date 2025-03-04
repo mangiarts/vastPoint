@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vast Point Kenya</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #E8F5E9; /* Spring Wood */
+            color: #4A1C1C; /* Siren */
+            overflow-x: hidden;
+            text-align: center; /* Center align text */
+        }
+        .wrapper {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInPage 1.5s ease-in-out forwards;
+            display: flex;
+            flex-direction: column; /* Stack sections vertically */
+            align-items: center; /* Center align items */
+        }
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero {
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8A1C1C;
+            position: relative;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #8A1C1C; /* Siren */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #6A1414; /* Darker Siren */
+        }
+        .category-slider, .product-carousel, .features, .testimonial-slider {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .category-card, .product-card, .feature-card, .testimonial {
+            background: #8A1C1C;
+            color: white;
+            padding: 15px;
+            min-width: 200px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .category-card:hover, .product-card:hover, .feature-card:hover, .testimonial:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background: #8A1C1C; /* Siren */
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .category-card, .product-card, .feature-card, .testimonial {
+                min-width: 150px;
+            }
+        }
+        .contact {
+            padding: 20px;
+            background: #F5ECE6; /* Light background */
+            color: #4A1C1C; /* Text color */
+        }
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+        .social-icon {
+            margin: 0 5px;
+            color: #4A1C1C; /* Siren color */
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            color: #8A1C1C; /* Darker Siren on hover */
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".animate");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.3 });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <section class="hero animate">
+            <div class="hero-content">
+                <h1>Your Trusted Partner in Health & Wellness</h1>
+                <p>Discover top-quality products for a healthier life.</p>
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
+        </section>
+        <section id="categories" class="categories animate">
+            <h2>Explore Our Categories</h2>
+            <div class="category-slider">
+                <a href="products.html#nutritionals" class="category-card">Nutritionals & Supplements</a>
+                <a href="products.html#chemicals" class="category-card">Chemicals & Surgical Items</a>
+                <a href="products.html#health" class="category-card">Health & Beauty Products</a>
+                <a href="products.html#homecare" class="category-card">Homecare Products</a>
+                <a href="products.html#others" class="category-card">Other Products</a>
+            </div>
+        </section>
+        <section class="contact animate">
+            <h2>Contact Us</h2>
+            <div class="contact-card">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+254 710544052</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>vastpoint08@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-location"></i>
+                    <p>Nairobi Kimathi hse 3rd floor</p>
+                </div>
+                <div class="contact-item">
+                    <a href="https://www.facebook.com/profile.php?id=61573180228738" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@vastpointproducts" target="_blank" class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.instagram.com/vastpoint_products" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose-us animate">
+            <h2>Why Choose Us?</h2>
+            <div class="features">
+                <div class="feature-card">Quality Products</div>
+                <div class="feature-card">Fast Delivery</div>
+                <div class="feature-card">Secure Payments</div>
+                <div class="feature-card">24/7 Support</div>
+            </div>
+        </section>
+        <section class="testimonials animate">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">“Amazing products and fast shipping!”</div>
+                <div class="testimonial">“The best online health store I’ve used.”</div>
+                <div class="testimonial">“Great customer service and quality items.”</div>
+            </div>
+        </section>
+        <footer class="animate">
+            <p>&copy; 2025 Vast Point Kenya | All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+</html>

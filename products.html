@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vast Point Kenya - Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #A8D8B9; /* Spring Wood */
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Center-align all text in the body */
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+        position: absolute; /* or fixed, depending on your layout */
+        left: -250px; /* Initially hidden */
+        width: 250px;
+        background: #C72C41; /* Siren */
+        padding: 20px;
+        transition: left 0.3s ease;
+        color: white;
+        max-height: 90vh; /* Set a maximum height */
+        overflow-y: auto; /* Enable scrolling if content exceeds max height */
+        display: none; /* Initially hidden */
+    }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background: #00507A;
+        }
+        .toggle-btn {
+            position: fixed;
+            left: 20px;
+            top: 10px;
+            background: #C72C41; /* Siren */
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .toggle-btn {
+        position: fixed;
+        left: 20px; /* Adjust this value */
+        top: 10px;
+        background: #C72C41; /* Siren */
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+        border: none;
+        font-size: 18px;
+        border-radius: 5px;
+        z-index: 1000; /* Ensure it's above other elements */
+        transition: transform 0.3s ease; /* Add transition for smooth effect */
+    }
+
+    .toggle-btn:hover {
+        background: #A8D8B9; /* Spring Wood */
+        transform: rotate(180deg); /* Rotate 180 degrees on hover */
+    }
+    
+    .products {
+        margin-left: auto; /* Center the container */
+        margin-right: auto; /* Center the container */
+        padding: 20px;
+        width: 100%;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        justify-items: center; /* Center items in the grid */
+    }
+    .product-card {
+        background: white; /* Keep product cards white for contrast */
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center; /* Center text inside product cards */
+        max-width: 300px; /* Added maximum card size */
+    }
+        .product-card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            padding: 10px;
+        }
+        .product-card h3 {
+            color: #C72C41; /* Siren for product titles */
+        }
+        .product-card p {
+            color: #333; /* Dark text for readability */
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar(event)">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="sidebar" id="sidebar">
+        <a href="#nutritionals">Nutritionals & Supplements</a>
+        <a href="#chemicals">Chemicals & Surgical Items</a>
+        <a href="#health">Health & Beauty Products</a>
+        <a href="#homecare">Homecare Products and Appliances</a>
+        <a href="#others">Other Products</a>
+    </div>
+    <div class="products">
+        <h2>Our Products</h2>
+        
+        <h3 id="nutritionals">Nutritionals & Supplements</h3>
+        <div class="grid">
+            <div class="product-card">
+                <img src="nutrition1.jpg" alt="Nutrition Product">
+                <h3>Nutrition Product 1</h3>
+                <p>Short description of the product.</p>
+                <!-- <p><strong>Price: Ksh 2000</strong></p> -->
+            </div>
+            <div class="product-card">
+                <img src="nutrition2.jpg" alt="Nutrition Product">
+                <h3>Nutrition Product 2</h3>
+                <p>Short description of the product.</p>
+                <!-- <p><strong>Price: Ksh 2200</strong></p> -->
+            </div>
+        </div>
+        
+        <h3 id="chemicals">Chemicals & Surgical Items</h3>
+        <div class="grid">
+            <div class="product-card">
+                <img src="chemical1.jpg" alt="Chemical Product">
+                <h3>Chemical Product 1</h3>
+                <p>Short description of the product.</p>
+                <!-- <p><strong>Price: Ksh 3000</strong></p> -->
+            </div>
+            <div class="product-card">
+                <img src="chemical2.jpg" alt="Chemical Product">
+                <h3>Chemical Product 2</h3>
+                <p>Short description of the product.</p>
+                <!-- <p><strong>Price: Ksh 3500</strong></p> -->
+            </div>
+        </div>
+        
+        <h3 id="health">Health & Beauty Products</h3>
+        <div class="grid">
+            <div class="product-card">
+                <img src="health1.jpg" alt="Health Product">
+                <h3>Health Product 1</h3>
+                <p>Short description of the product.</p>
+                <!-- <p><strong>Price: Ksh 1500</strong></p> -->
+            </div>
+            <div class="product-card">
+                <img src="health2.jpg" alt="Health Product">
+                <h3>Health Product 2</h3>
+                <p>Short description of the product.</p>
+                <!-- <p><strong>Price: Ksh 1800</strong></p> -->
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function toggleSidebar(event) {
+            event.stopPropagation();
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.display === "none" || sidebar.style.display === "") {
+                sidebar.style.display = "block"; // Show the sidebar
+                sidebar.style.left = "0px"; // Move it into view
+            } else {
+                sidebar.style.left = "-250px"; // Move it out of view
+                setTimeout(() => {
+                    sidebar.style.display = "none"; // Hide the sidebar after the animation
+                }, 300); // Match this duration with the CSS transition duration
+            }
+        }
+        
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const button = document.querySelector('.toggle-btn');
+            if (sidebar.style.display === "block" && !sidebar.contains(event.target) && !button.contains(event.target)) {
+                sidebar.style.left = "-250px"; // Move it out of view
+                setTimeout(() => {
+                    sidebar.style.display = "none"; // Hide the sidebar after the animation
+                }, 300); // Match this duration with the CSS transition duration
+            }
+        });
+        
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
