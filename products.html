@@ -8,204 +8,150 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #A8D8B9; /* Spring Wood */
+            background-color: #A8D8B9;
             margin: 0;
             padding: 0;
-            text-align: center; /* Center-align all text in the body */
+            text-align: center;
         }
-        .container {
+        header {
+            background: #C72C41;
+            color: white;
+            padding: 20px;
+        }
+        .navbar {
             display: flex;
-        }
-        .sidebar {
-        position: absolute; /* or fixed, depending on your layout */
-        left: -250px; /* Initially hidden */
-        width: 250px;
-        background: #C72C41; /* Siren */
-        padding: 20px;
-        transition: left 0.3s ease;
-        color: white;
-        max-height: 90vh; /* Set a maximum height */
-        overflow-y: auto; /* Enable scrolling if content exceeds max height */
-        display: none; /* Initially hidden */
-    }
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .sidebar a:hover {
+            justify-content: center;
             background: #00507A;
+            padding: 15px;
         }
-        .toggle-btn {
-            position: fixed;
-            left: 20px;
-            top: 10px;
-            background: #C72C41; /* Siren */
+        .navbar a {
             color: white;
-            padding: 10px 15px;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            transition: background 0.3s, transform 0.3s;
             cursor: pointer;
-            border: none;
-            font-size: 18px;
-            border-radius: 5px;
-            z-index: 1000;
         }
-        .toggle-btn {
-        position: fixed;
-        left: 20px; /* Adjust this value */
-        top: 10px;
-        background: #C72C41; /* Siren */
-        color: white;
-        padding: 10px 15px;
-        cursor: pointer;
-        border: none;
-        font-size: 18px;
-        border-radius: 5px;
-        z-index: 1000; /* Ensure it's above other elements */
-        transition: transform 0.3s ease; /* Add transition for smooth effect */
-    }
-
-    .toggle-btn:hover {
-        background: #A8D8B9; /* Spring Wood */
-        transform: rotate(180deg); /* Rotate 180 degrees on hover */
-    }
-    
-    .products {
-        margin-left: auto; /* Center the container */
-        margin-right: auto; /* Center the container */
-        padding: 20px;
-        width: 100%;
-    }
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        justify-items: center; /* Center items in the grid */
-    }
-    .product-card {
-        background: white; /* Keep product cards white for contrast */
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        text-align: center; /* Center text inside product cards */
-        max-width: 300px; /* Added maximum card size */
-    }
+        .navbar a:hover {
+            background: #C72C41;
+            transform: scale(1.1);
+        }
+        .section {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s forwards;
+            padding: 20px;
+        }
+        .active {
+            display: block;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+        .product-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
         .product-card img {
             width: 100%;
             max-height: 200px;
             object-fit: contain;
             padding: 10px;
         }
-        .product-card h3 {
-            color: #C72C41; /* Siren for product titles */
-        }
-        .product-card p {
-            color: #333; /* Dark text for readability */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <button class="toggle-btn" onclick="toggleSidebar(event)">
-        <i class="fas fa-bars"></i>
-    </button>
-    <div class="sidebar" id="sidebar">
-        <a href="#nutritionals">Nutritionals & Supplements</a>
-        <a href="#chemicals">Chemicals & Surgical Items</a>
-        <a href="#health">Health & Beauty Products</a>
-        <a href="#homecare">Homecare Products and Appliances</a>
-        <a href="#others">Other Products</a>
-    </div>
-    <div class="products">
-        <h2>Our Products</h2>
-        
-        <h3 id="nutritionals">Nutritionals & Supplements</h3>
+    <header>
+        <h1>Vast Point Kenya</h1>
+        <p>Your trusted source for quality products</p>
+    </header>
+    <nav class="navbar">
+        <a onclick="showSection('nutrition')">Health and Nutrition Products</a>
+        <a onclick="showSection('surgical')">Surgical, Laboratory & Medical Items</a>
+        <a onclick="showSection('others')">Other Products</a>
+    </nav>
+    <div id="nutrition" class="section active">
+        <h2>Health and Nutrition Products</h2>
         <div class="grid">
             <div class="product-card">
                 <img src="nutrition1.jpg" alt="Nutrition Product">
                 <h3>Nutrition Product 1</h3>
                 <p>Short description of the product.</p>
-                <!-- <p><strong>Price: Ksh 2000</strong></p> -->
             </div>
             <div class="product-card">
                 <img src="nutrition2.jpg" alt="Nutrition Product">
                 <h3>Nutrition Product 2</h3>
                 <p>Short description of the product.</p>
-                <!-- <p><strong>Price: Ksh 2200</strong></p> -->
             </div>
         </div>
-        
-        <h3 id="chemicals">Chemicals & Surgical Items</h3>
-        <div class="grid">
-            <div class="product-card">
-                <img src="chemical1.jpg" alt="Chemical Product">
-                <h3>Chemical Product 1</h3>
-                <p>Short description of the product.</p>
-                <!-- <p><strong>Price: Ksh 3000</strong></p> -->
-            </div>
-            <div class="product-card">
-                <img src="chemical2.jpg" alt="Chemical Product">
-                <h3>Chemical Product 2</h3>
-                <p>Short description of the product.</p>
-                <!-- <p><strong>Price: Ksh 3500</strong></p> -->
-            </div>
-        </div>
-        
-        <h3 id="health">Health & Beauty Products</h3>
-        <div class="grid">
-            <div class="product-card">
-                <img src="health1.jpg" alt="Health Product">
-                <h3>Health Product 1</h3>
-                <p>Short description of the product.</p>
-                <!-- <p><strong>Price: Ksh 1500</strong></p> -->
-            </div>
-            <div class="product-card">
-                <img src="health2.jpg" alt="Health Product">
-                <h3>Health Product 2</h3>
-                <p>Short description of the product.</p>
-                <!-- <p><strong>Price: Ksh 1800</strong></p> -->
-            </div>
-        </div>
-        
     </div>
+    <div id="surgical" class="section">
+        <h2>Surgical, Laboratory & Medical Items</h2>
+        <div class="grid">
+            <div class="product-card">
+                <img src="surgical1.jpg" alt="Surgical Product">
+                <h3>Surgical Product 1</h3>
+                <p>Short description of the product.</p>
+            </div>
+            <div class="product-card">
+                <img src="surgical2.jpg" alt="Surgical Product">
+                <h3>Surgical Product 2</h3>
+                <p>Short description of the product.</p>
+            </div>
+        </div>
+    </div>
+    <div id="others" class="section">
+        <h2>Other Products</h2>
+        <div class="grid">
+            <div class="product-card">
+                <img src="other1.jpg" alt="Other Product">
+                <h3>Other Product 1</h3>
+                <p>Short description of the product.</p>
+            </div>
+            <div class="product-card">
+                <img src="other2.jpg" alt="Other Product">
+                <h3>Other Product 2</h3>
+                <p>Short description of the product.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Contact us: vastpoint08@gmail.com | +254 710544052</p>
+    </footer>
     <script>
-        function toggleSidebar(event) {
-            event.stopPropagation();
-            const sidebar = document.getElementById('sidebar');
-            if (sidebar.style.display === "none" || sidebar.style.display === "") {
-                sidebar.style.display = "block"; // Show the sidebar
-                sidebar.style.left = "0px"; // Move it into view
-            } else {
-                sidebar.style.left = "-250px"; // Move it out of view
-                setTimeout(() => {
-                    sidebar.style.display = "none"; // Hide the sidebar after the animation
-                }, 300); // Match this duration with the CSS transition duration
-            }
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+                section.style.display = 'none';
+            });
+            const activeSection = document.getElementById(sectionId);
+            activeSection.style.display = 'block';
+            setTimeout(() => {
+                activeSection.classList.add('active');
+            }, 10);
         }
         
-        document.addEventListener('click', function(event) {
-            const sidebar = document.getElementById('sidebar');
-            const button = document.querySelector('.toggle-btn');
-            if (sidebar.style.display === "block" && !sidebar.contains(event.target) && !button.contains(event.target)) {
-                sidebar.style.left = "-250px"; // Move it out of view
-                setTimeout(() => {
-                    sidebar.style.display = "none"; // Hide the sidebar after the animation
-                }, 300); // Match this duration with the CSS transition duration
-            }
-        });
-        
-        document.querySelectorAll('.sidebar a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 20,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        document.addEventListener("DOMContentLoaded", () => {
+            showSection('nutrition');
         });
     </script>
 </body>
