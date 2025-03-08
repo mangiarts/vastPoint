@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vast Point Kenya - Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -123,18 +124,44 @@
         .next {
             right: 10px;
         }
+        .social-icon {
+            margin: 0 5px;
+            color: #4A1C1C; /* Siren color */
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            color: #8A1C1C; /* Darker Siren on hover */
+        }
+
+        #others {
+            display: block !important;
+            opacity: 1 !important;
+        }
 
     </style>
 </head>
 <body>
     <header>
-        <h1>Vast Point Kenya</h1>
-        <p>Your trusted source for quality products</p>
+        
+        <div class="contact-item">
+            <h1>Vast Point Kenya</h1>
+            <p>Your trusted source for quality products</p>
+            <a href="https://www.facebook.com/profile.php?id=61573180228738" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/@vastpointproducts" target="_blank" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.instagram.com/vastpoint_products" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
     </header>
     <nav class="navbar">
-        <a onclick="showSection('surgical')">Surgical, Laboratory & Medical Items</a>
-        <a onclick="showSection('nutrition')">Health and Nutrition Products</a>
         
+        <a onclick="showSection('nutrition')">Health and Nutrition Products</a>
+        <a onclick="showSection('surgical')">Surgical, Laboratory & Medical Items</a>
         <a onclick="showSection('others')">Other Products</a>
     </nav>
     <div id="surgical" class="section">
@@ -523,44 +550,307 @@
                     <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
                 </p>
             </div>
-
-            
-            
         </div>
-        
     </div>
     <div id="nutrition" class="section active">
         <h2>Health and Nutrition Products</h2>
+
         <div class="grid">
             <div class="product-card">
-                <img src="surgical1.jpg" alt="Surgical Product">
-                <h3>Surgical Product 1</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="health products/IMG-20250301-WA0015.jpg" alt="Pure Nutrition Calcium Magnesium + Zinc with Vitamin D3 & K2 supplements " class="active">
+                    <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Pure Nutrition Calcium Magnesium + Zinc with Vitamin D3 & K2</h3>
+                <p class="description">
+                    It is marketed to support muscle function, bone and joint health, and collagen synthesis. 
+                    <span class="more">The bottle contains 60 tablets, with a dosage of 1400 mg.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
+        
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0016.jpg" alt="Pure Nutrition Digestive Enzymes with Bromelain" class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Digestive Enzymes with Bromelain</h3>
+                    <p class="description">
+                        This is a dietary supplement containing digestive enzymes and bromelain. It is marketed to support digestion and boost immunity.
+                        <span class="more">The bottle contains 60 capsules, and the image also shows pineapple pieces, likely to represent the bromelain enzyme, which is derived from pineapples.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
             <div class="product-card">
-                <img src="surgical2.jpg" alt="Surgical Product">
-                <h3>Surgical Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="health products/IMG-20250301-WA0017.jpg" alt="Pure Nutrition Testoboost " class="active">
+                    <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Pure Nutrition Testoboost</h3>
+                <p class="description">
+                    This is a dietary supplement marketed for sexual wellbeing. It contains a blend of herbal ingredients
+                    <span class="more">The supplement is intended to help improve energy levels, enhance stamina, and support sexual health.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
+            </div>
+        
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0023.jpg" alt="Pure Nutrition Kidney Detox Turmeric & Vitamin C" class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Kidney Detox Turmeric & Vitamin C</h3>
+                    <p class="description">
+                        This is a dietary supplement designed to support kidney function and general wellbeing.
+                        <span class="more">The bottle contains 60 capsules, and the image also shows pineapple pieces, likely to represent the bromelain enzyme, which is derived from pineapples.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0024.jpg" alt="Pure Nutrition Diabetic Care" class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Diabetic Care</h3>
+                    <p class="description">
+                        This is a dietary supplement formulated to support general wellbeing, specifically targeting diabetic care.
+                        <span class="more">It contains a blend of gymnemic acid, berberine, and alpha lipoic acid. The supplement is marketed to help regulate glucose levels, promote cellular metabolism, and enhance insulin function.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0025.jpg" alt="Pure Nutrition Glutathione 500mg with Vitamin C & Saffron." class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Glutathione 500mg with Vitamin C & Saffron.</h3>
+                    <p class="description">
+                        This is a dietary supplement in the form of effervescent tablets, designed to support beauty.
+                        <span class="more"> It contains glutathione (500mg), vitamin C, and saffron. It is marketed to provide antioxidant benefits and brighten skin tone.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0026.jpg" alt="Pure Nutrition Spirulina+" class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Spirulina+</h3>
+                    <p class="description">
+                        This is a dietary supplement containing spirulina and a multi-green blend.
+                        <span class="more"> It is marketed to support detoxification and help maintain healthy skin.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0027.jpg" alt="Pure Nutrition Melatonin Sustained Release 10mg with Valeriana Wallichii." class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Melatonin Sustained Release 10mg with Valeriana Wallichii.</h3>
+                    <p class="description">
+                        This is a dietary supplement designed to promote good sleep.
+                        <span class="more">  It contains 10mg of melatonin in a sustained-release formula, along with Valeriana Wallichii.  It is marketed to help regulate high blood pressure and provide stress relief.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0029.jpg" alt="Pure Nutrition L-Arginine with Green Coffee & Seaweed Extract" class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition L-Arginine with Green Coffee & Seaweed Extract</h3>
+                    <p class="description">
+                        This is a dietary supplement containing L-arginine, green coffee, and seaweed extract.
+                        <span class="more">  It is marketed for general wellbeing, specifically focusing on supporting heart health, endurance, and improving energy levels. </span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0030.jpg" alt="Pure Nutrition Vegan Glucosamine with MSM" class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Vegan Glucosamine with MSM</h3>
+                    <p class="description">
+                        This is a dietary supplement containing vegan glucosamine and MSM (methylsulfonylmethane).
+                        <span class="more">  It is marketed for general wellbeing, focusing on supporting joint mobility, reducing inflammation, and providing antioxidants. </span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0031.jpg" alt="Pure Nutrition Vitamin D3 + K2 from Lichen" class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Vitamin D3 + K2 from Lichen</h3>
+                    <p class="description">
+                        This is a dietary supplement containing vitamin D3 and vitamin K2, derived from lichen.
+                        <span class="more"> It is marketed to promote bone health, support immunity, and aid calcium absorption.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0032.jpg" alt="Pure Nutrition Biotin 10,000 mcg from Natural Sesbania Extract" class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Biotin 10,000 mcg from Natural Sesbania Extract</h3>
+                    <p class="description">
+                        This is a dietary supplement containing 10,000 mcg of biotin derived from natural sesbania extract.
+                        <span class="more"> It is marketed for beauty, specifically focusing on supporting energy production, helping reduce hair fall, and improving skin and nail health.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0033.jpg" alt="Pure Nutrition Plant-Based Collagen Builder with Natural Biotin & Vitamin C." class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Plant-Based Collagen Builder with Natural Biotin & Vitamin C.</h3>
+                    <p class="description">
+                        This is a plant-based dietary supplement designed to support collagen production. It contains natural biotin and vitamin C.
+                        <span class="more"> It is marketed for beauty, specifically focusing on helping improve skin health and providing anti-aging benefits.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0034.jpg" alt="Pure Nutrition Lung Detox with Vitamin C & Grape Seed Extract." class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Lung Detox with Vitamin C & Grape Seed Extract.</h3>
+                    <p class="description">
+                        This is a dietary supplement designed to support lung function and general wellbeing.
+                        <span class="more">It contains vitamin C and grape seed extract. It is marketed to support lung functions, boost respiratory health, and help relieve congestion.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="health products/IMG-20250301-WA0035.jpg" alt="Pure Nutrition Progut 50 Billion CFU 14 Strands of Probiotics." class="active">
+                        <!-- <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product"> -->
+                        <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                        <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                    </div>
+                    <h3>Pure Nutrition Progut 50 Billion CFU 14 Strands of Probiotics.</h3>
+                    <p class="description">
+                        This is a dietary supplement containing 50 billion CFUs (colony-forming units) of probiotics, comprising 14 different strains.
+                        <span class="more"> It is marketed to support gut health, boost immunity, and support digestion. The bottle contains 60 vegetarian capsules, with a dosage of 600 mg.</span>
+                        <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
+    
     <div id="others" class="section">
         <h2>Other Products</h2>
         <div class="grid">
             <div class="product-card">
-                <img src="other1.jpg" alt="Other Product">
-                <h3>Other Product 1</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="health products/IMG-20250301-WA0013.jpg" alt="Draminski TwistGrain PRO" class="active">
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Pure Nutrition Progut 50 Billion CFU 14 Strands of Probiotics.</h3>
+                <p class="description">
+                    a Draminski TwistGrain PRO moisture meter, specifically designed for use with grains and seeds, including coffee.
+                    <span class="more"></span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
+
             <div class="product-card">
-                <img src="other2.jpg" alt="Other Product">
-                <h3>Other Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="health products/IMG-20250301-WA0007.jpg" alt="SILICONE WIG FIX" class="active">
+                    <img src="health products/IMG-20250301-WA0011.jpg" alt="SILICONE WIG FIX">
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>SILICONE WIG FIX.</h3>
+                <p class="description">
+                    The swatches are likely intended for color matching in the context of wigs or hair extensions due to the variety of skin and hair tones represented.
+                    <span class="more"> </span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
         </div>
     </div>
+
     <footer>
-        <p>Contact us: vastpoint08@gmail.com | +254 710544052</p>
+        <div class="contact-item">
+            <p>Contact us: vastpoint08@gmail.com | +254 710544052</p>
+            
+        </div>
+        
     </footer>
     <script>
         function toggleDescription(card) {
