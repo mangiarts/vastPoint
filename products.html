@@ -24,6 +24,17 @@
             background: #00507A;
             padding: 15px;
         }
+        .description .more {
+            display: none;
+        }
+
+        .description .more.active {
+            display: inline;
+        }
+
+        .read-more.hidden {
+            display: none;
+        }
         .navbar a {
             color: white;
             text-decoration: none;
@@ -77,6 +88,42 @@
                 transform: translateY(0);
             }
         }
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Set a fixed height for the images */
+            overflow: hidden;
+        }
+
+        .image-container img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            display: none; /* Hide all images by default */
+        }
+
+        .image-container img.active {
+            display: block; /* Show only the active image */
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -95,224 +142,390 @@
     
         <div class="grid">
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0026.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0028.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0029.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0026.jpg" alt="athletic tape" class="active">
+                    <img src="items/IMG-20250306-WA0027.jpg" alt="Nutrition Product">
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>athletic tape(medical tape)</h3>
+                <p class="description">
+                    Athletic tape is a strong, adhesive, and often non-elastic tape used to support muscles, joints, and ligaments. 
+                    <span class="more">It helps prevent injuries, stabilize joints, and provide extra support during physical activities. 
+                    It is commonly used in sports, physiotherapy, and medical applications to reduce strain and improve recovery.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
 
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0030.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0031.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0032.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0033.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0028.jpg" alt="Feeding tube" class="active">
+                    <img src="items/IMG-20250306-WA0029.jpg" alt="Feeding tube">
+                    <img src="items/IMG-20250306-WA0030.jpg" alt="Feeding tube">
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>enteral feeding tube(nasogastric tube)</h3>
+                <p class="description">
+                    A feeding tube is a medical device used to deliver nutrition, fluids, or medication directly into a patient's stomach or intestines.
+                    <span class="more">It is commonly used for patients who have difficulty swallowing, eating, or digesting food normally due to medical conditions such as stroke, surgery, or chronic illness.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
 
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0034.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0035.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0036.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0037.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0031.jpg" alt="Foley Catheter" class="active">
+                    <img src="items/IMG-20250306-WA0033.jpg" alt="Foley Catheter">
+                    <img src="items/IMG-20250306-WA0034.jpg" alt="Foley Catheter">
+                    <img src="items/IMG-20250306-WA0035.jpg" alt="Foley Catheter">
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Foley Catheter</h3>
+                <p class="description">
+                    A Foley catheter is a flexible tube used to drain urine from the bladder when a patient cannot urinate naturally.
+                    <span class="more">It is inserted through the urethra and held in place by a small inflated balloon inside the bladder.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
 
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0038.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0039.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0040.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0041.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0032.jpg" alt="Suction Catheter" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0029.jpg" alt="Suction Catheter"> -->
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Suction Catheter</h3>
+                <p class="description">
+                    A suction catheter is a flexible medical tube used to remove secretions, fluids, or mucus from a patient’s airway.
+                    <span class="more">It is commonly used in hospitals and emergency care settings for patients who have difficulty clearing their airways on their own.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
 
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0042.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0043.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0044.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0045.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0036.jpg" alt="urine drainage bag" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0029.jpg" alt="Suction Catheter"> -->
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>urine drainage bag</h3>
+                <p class="description">
+                    a urine drainage bag used with a Foley catheter to collect urine.
+                    <span class="more">It features graduated markings, flexible tubing, a secure connector, and a drainage valve for easy emptying. Common in hospitals and home care for patients needing bladder drainage.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
 
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0046.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0047.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0048.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0049.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0037.jpg" alt="urine leg bag" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0029.jpg" alt="Suction Catheter"> -->
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>urine leg bag</h3>
+                <p class="description">
+                    a urine leg bag, a compact drainage bag designed for mobility. 
+                    <span class="more">It features graduated markings, adjustable tubing, secure straps, and drainage valves for controlled emptying. Commonly used by patients needing long-term urinary management while staying active.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
 
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0050.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0038.jpg" alt="medical syringes" class="active">
+                    <img src="items/IMG-20250306-WA0039.jpg" alt="medical syringes">
+                    <img src="items/IMG-20250306-WA0040.jpg" alt="medical syringes">
+                    <img src="items/IMG-20250306-WA0041.jpg" alt="medical syringes">
+                    <img src="items/IMG-20250306-WA0042.jpg" alt="medical syringes">
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>medical syringes</h3>
+                <p class="description">
+                    These syringes have graduated markings for precise measurement and are used for injecting or withdrawing fluids in medical procedures. 
+                    <span class="more">They are commonly used in hospitals, clinics, and home care for medication administration, flushing, or fluid extraction.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
+            </div>
+            
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0043.jpg" alt="disposable infusion set" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0039.jpg" alt="medical syringes">
+                    <img src="items/IMG-20250306-WA0040.jpg" alt="medical syringes">
+                    <img src="items/IMG-20250306-WA0041.jpg" alt="medical syringes">
+                    <img src="items/IMG-20250306-WA0042.jpg" alt="medical syringes"> -->
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>disposable infusion set</h3>
+                <p class="description">
+                    a disposable infusion set, used for intravenous (IV) fluid and medication administration. 
+                    <span class="more">It includes a tube, drip chamber, flow regulator, and needle for controlled fluid delivery. Commonly used in hospitals and clinics.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0051.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0052.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0053.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0044.jpg" alt="intravenous (IV) infusion set" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0039.jpg" alt="intravenous (IV) infusion set"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>intravenous (IV) infusion set</h3>
+                <p class="description">
+                    an intravenous (IV) infusion set, used for delivering fluids and medications directly into the bloodstream.
+                    <span class="more">It includes a drip chamber, tubing, flow regulator, and needle for controlled infusion. Commonly used in hospitals and clinics.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
 
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0054.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0044.jpg" alt="intravenous (IV) infusion set" class="active">
+                    <img src="items/IMG-20250306-WA0045.jpg" alt="intravenous (IV) infusion set">
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>intravenous (IV) infusion set</h3>
+                <p class="description">
+                    an intravenous (IV) infusion set, used for delivering fluids and medications directly into the bloodstream.
+                    <span class="more">It includes a drip chamber, tubing, flow regulator, and needle for controlled infusion. Commonly used in hospitals and clinics.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0055.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0046.jpg" alt="Blood transfusion set" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0045.jpg" alt="Blood transfusion set"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Blood transfusion set</h3>
+                <p class="description">
+                    a blood transfusion set, used for administering blood and blood products intravenously.
+                    <span class="more">It includes a drip chamber with a filter, tubing, and needle to ensure safe and controlled transfusion. Commonly used in hospitals and blood banks.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0047.jpg" alt="Disposable Gloves" class="active">
+                    <img src="items/IMG-20250306-WA0048.jpg" alt="Disposable Gloves">
+                    <img src="items/IMG-20250306-WA0049.jpg" alt="Disposable Gloves">
+                    <img src="items/IMG-20250306-WA0050.jpg" alt="Disposable Gloves">
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Disposable Gloves</h3>
+                <p class="description">
+                    a blood transfusion set, used for administering blood and blood products intravenously.
+                    <span class="more">It includes a drip chamber with a filter, tubing, and needle to ensure safe and controlled transfusion. Commonly used in hospitals and blood banks.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0051.jpg" alt="Suction Set" class="active">
+                    <img src="items/IMG-20250306-WA0052.jpg" alt="Disposable Gloves">
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Suction Set</h3>
+                <p class="description">
+                    a medical device used for oral and surgical suctioning of fluids.
+                    <span class="more">It consists of a rigid suction tip and flexible tubing, commonly used in hospitals and surgical procedures.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0053.jpg" alt="intravenous (IV) cannulas" class="active">
+                    <img src="items/IMG-20250306-WA0054.jpg" alt="intravenous (IV) cannulas">
+                    <img src="items/IMG-20250306-WA0055.jpg" alt="intravenous (IV) cannulas">
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>intravenous (IV) cannulas</h3>
+                <p class="description">
+                    intravenous (IV) cannulas in different sizes, identified by color-coded hubs.
+                    <span class="more">These medical devices are used to insert into veins for fluid or medication administration. Commonly used in hospitals and emergency care settings.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0056.jpg" alt="incontinence diaper briefs" class="active">
+                    <img src="items/IMG-20250306-WA0057.jpg" alt="incontinence diaper briefs">
+                    <!-- <img src="items/IMG-20250306-WA0055.jpg" alt="incontinence diaper briefs"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>incontinence diaper briefs</h3>
+                <p class="description">
+                    intravenous (IV) cannulas in different sizes, identified by color-coded hubs.
+                    <span class="more">These medical devices are used to insert into veins for fluid or medication administration. Commonly used in hospitals and emergency care settings.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0058.jpg" alt="Feminine Towels" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0057.jpg" alt="Feminine Towels"> -->
+                    <!-- <img src="items/IMG-20250306-WA0055.jpg" alt="incontinence diaper briefs"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Feminine Towels</h3>
+                <p class="description">
+                    These sanitary pads are designed for comfort and protection during menstruation.
+                    <span class="more"></span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0056.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0059.jpg" alt="Maternity Pads" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0057.jpg" alt="Feminine Towels"> -->
+                    <!-- <img src="items/IMG-20250306-WA0055.jpg" alt="incontinence diaper briefs"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Maternity Pads</h3>
+                <p class="description">
+                    These are disposable postpartum underwear designed for comfort and absorbency after childbirth.
+                    <span class="more"></span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
+
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0057.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0060.jpg" alt="Scalpel Blades" class="active">
+                    <img src="items/IMG-20250306-WA0061.jpg" alt="Scalpel Blades">
+                    <!-- <img src="items/IMG-20250306-WA0055.jpg" alt="incontinence diaper briefs"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Scalpel Blades</h3>
+                <p class="description">
+                    Sharp, sterile blades used in surgical procedures for precise cutting of tissue.
+                    <span class="more"></span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
+
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0058.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0062.jpg" alt="Disposable Face Masks" class="active">
+                    <img src="items/IMG-20250306-WA0063.jpg" alt="Disposable Face Masks">
+                    <!-- <img src="items/IMG-20250306-WA0055.jpg" alt="incontinence diaper briefs"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Disposable Face Masks</h3>
+                <p class="description">
+                    Sharp, sterile blades used in surgical procedures for precise cutting of tissue.
+                    <span class="more"></span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
+
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0059.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0064.jpg" alt="non-rebreather mask" class="active">
+                    <img src="items/IMG-20250306-WA0065.jpg" alt="non-rebreather mask">
+                    <!-- <img src="items/IMG-20250306-WA0055.jpg" alt="incontinence diaper briefs"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>non-rebreather mask</h3>
+                <p class="description">
+                    a medical device used to deliver high concentrations of oxygen to patients in respiratory distress.
+                    <span class="more"></span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
+
+        
+
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0060.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0066.jpg" alt="Central Venous Catheter (CVC)" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0063.jpg" alt="Disposable Face Masks"> -->
+                    <!-- <img src="items/IMG-20250306-WA0055.jpg" alt="incontinence diaper briefs"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Central Venous Catheter (CVC)</h3>
+                <p class="description">
+                    A Central Venous Catheter is a long, flexible tube inserted into a large vein, typically in the neck,
+                    <span class="more">chest, or groin, to administer medications, fluids, or nutrients directly into the bloodstream. It is also used for blood draws and monitoring central venous pressure.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
+
             <div class="product-card">
-                <img src="items/IMG-20250306-WA0061.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
+                <div class="image-container">
+                    <img src="items/IMG-20250306-WA0067.jpg" alt="Neucell Central Venous Single Lumen Catheter Kit" class="active">
+                    <!-- <img src="items/IMG-20250306-WA0063.jpg" alt="Disposable Face Masks"> -->
+                    <!-- <img src="items/IMG-20250306-WA0055.jpg" alt="incontinence diaper briefs"> -->
+                    
+                    
+                    <button class="prev" onclick="changeImage(this, -1); event.stopPropagation();">&#10094;</button>
+                    <button class="next" onclick="changeImage(this, 1); event.stopPropagation();">&#10095;</button>
+                </div>
+                <h3>Neucell Central Venous Single Lumen Catheter Kit</h3>
+                <p class="description">
+                    used for inserting a catheter into a central vein
+                    <span class="more"> It includes a needle, guidewire, dilator, catheter, syringe, connectors, and caps in a sterile tray to facilitate safe and efficient central line placement for administering fluids or medications.</span>
+                    <a href="javascript:void(0);" class="read-more" onclick="event.stopPropagation(); this.previousElementSibling.classList.toggle('active'); this.classList.toggle('hidden');">Read more</a>
+                </p>
             </div>
-    
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0062.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0063.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0064.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0065.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
-    
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0066.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 1</h3>
-                <p>Short description of the product.</p>
-            </div>
-            <div class="product-card">
-                <img src="items/IMG-20250306-WA0067.jpg" alt="Nutrition Product">
-                <h3>Nutrition Product 2</h3>
-                <p>Short description of the product.</p>
-            </div>
+
+            
+            
         </div>
         
     </div>
@@ -350,6 +563,30 @@
         <p>Contact us: vastpoint08@gmail.com | +254 710544052</p>
     </footer>
     <script>
+        function toggleDescription(card) {
+            const description = card.querySelector('.description .more');
+            const readMoreLink = card.querySelector('.read-more');
+            
+            if (description) {
+                description.classList.toggle('active');
+                readMoreLink.classList.toggle('hidden');
+            }
+        }
+        function changeImage(button, direction) {
+            const container = button.parentElement;
+            const images = container.querySelectorAll('img');
+            let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+
+            // Hide current image
+            images[currentIndex].classList.remove('active');
+
+            // Calculate new index
+            let newIndex = (currentIndex + direction + images.length) % images.length;
+
+            // Show new image
+            images[newIndex].classList.add('active');
+        }
+
         function showSection(sectionId) {
             document.querySelectorAll('.section').forEach(section => {
                 section.classList.remove('active');
