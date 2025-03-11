@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mangiarts-printshop.netlify.app/sitemap.xml
